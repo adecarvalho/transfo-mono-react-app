@@ -191,7 +191,7 @@ class ModelePage extends React.Component {
 										<div className="col s3">
 											<a
 												onClick={this.onClickHandler}
-												className="waves-effect waves-light btn  amber darken-4"
+												className="waves-effect waves-light btn  teal darken-1"
 											>
 												Enregister
 											</a>

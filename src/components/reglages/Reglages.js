@@ -1,73 +1,105 @@
 import React from 'react'
 import CardReglage from './CardReglage'
+import { connect } from 'react-redux'
+
+import { setNewReglage } from '../../store/actions'
 //
 class Reglages extends React.Component {
 	state = {
-		tension: 0,
-		module: 5,
-		phase: 0
+		u1eff: '0',
+		module: '500',
+		phase: '0'
 	}
 	//
 	onChangeModule = e => {
 		const module = e.target.value
 		//console.log('module', module)
-		this.setState({
-			module: module
-		})
+		this.setState(
+			{
+				module: module
+			},
+			() => {
+				this.props.onSetNewReglage(this.state)
+			}
+		)
 	}
 	onChangeTension = e => {
 		const u1 = e.target.value
 		//console.log('tension', u1)
-		this.setState({
-			tension: u1
-		})
+		this.setState(
+			{
+				u1eff: u1
+			},
+			() => {
+				this.props.onSetNewReglage(this.state)
+			}
+		)
 	}
 	onChangePhase = e => {
 		const phase = e.target.value
 		//console.log('phase', phase)
-		this.setState({
-			phase: phase
-		})
+		this.setState(
+			{
+				phase: phase
+			},
+			() => {
+				this.props.onSetNewReglage(this.state)
+			}
+		)
 	}
 
 	render() {
 		return (
-			<div className="row">
-				{/* reglage tension u1 */}
-				<div className="col s4">
-					<CardReglage
-						valeur={this.state.tension}
-						onChangeValeur={this.onChangeTension}
-						min={0}
-						max={220}
-						titre={'Tension primaire en Veff'}
-					/>
-				</div>
+			<div className="fluid">
+				<div className="row">
+					{/* reglage tension u1 */}
+					<div className="col s12 m4">
+						<CardReglage
+							valeur={this.state.u1eff}
+							onChangeValeur={this.onChangeTension}
+							min={0}
+							max={220}
+							step={5}
+							titre={'Tension primaire en Veff'}
+						/>
+					</div>
 
-				{/* reglage module charge */}
-				<div className="col s4">
-					<CardReglage
-						valeur={this.state.module}
-						onChangeValeur={this.onChangeModule}
-						min={5}
-						max={500}
-						titre={'Module de la charge'}
-					/>
-				</div>
+					{/* reglage module charge */}
+					<div className="col s12 m4">
+						<CardReglage
+							valeur={this.state.module}
+							onChangeValeur={this.onChangeModule}
+							min={20}
+							max={500}
+							step={5}
+							titre={'Module de la charge'}
+						/>
+					</div>
 
-				{/* reglage phase charge */}
-				<div className="col s4">
-					<CardReglage
-						valeur={this.state.phase}
-						onChangeValeur={this.onChangePhase}
-						min={-90}
-						max={90}
-						titre={'Phase de la charge'}
-					/>
+					{/* reglage phase charge */}
+					<div className="col s12 m4">
+						<CardReglage
+							valeur={this.state.phase}
+							onChangeValeur={this.onChangePhase}
+							min={-90}
+							max={90}
+							step={10}
+							titre={'Phase de la charge'}
+						/>
+					</div>
 				</div>
 			</div>
 		)
 	}
 }
 
-export default Reglages
+const mapDispatchToProps = dispatch => {
+	return {
+		onSetNewReglage: reglage => dispatch(setNewReglage(reglage))
+	}
+}
+
+export default connect(
+	null,
+	mapDispatchToProps
+)(Reglages)

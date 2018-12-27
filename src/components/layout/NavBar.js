@@ -1,26 +1,17 @@
-import React from "react"
+import React from 'react'
 
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 
 class NavBar extends React.Component {
-  render() {
-    return (
-      <nav className="nav-wrapper amber darken-4">
-        <Link to="/" className="brand-logo left">
-          <i className="material-icons">home</i>
-        </Link>
-        <ul id="nav-mobile" className="right">
-          <li>
-            <Link to="/modele">Modele</Link>
-          </li>
-
-          <li>
-            <Link to="/mesure">Mesure</Link>
-          </li>
-        </ul>
-      </nav>
-    )
-  }
+	render() {
+		return (
+			<nav className="nav-wrapper teal darken-1">
+				<Link to="/" className="brand-logo right">
+					<i className="material-icons">home</i>
+				</Link>
+			</nav>
+		)
+	}
 }
 
 export default NavBar
