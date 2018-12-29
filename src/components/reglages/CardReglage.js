@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const CardReglage = props => {
 	const { min, max, step, titre, valeur, onChangeValeur } = props
@@ -22,7 +23,7 @@ const CardReglage = props => {
 					/>
 				</div>
 			</div>
-			<div class="card-action">
+			<div className="card-action">
 				<span className="teal-text">
 					<i className="material-icons left">network_check</i>
 					{`${valeur}`}
@@ -30,6 +31,15 @@ const CardReglage = props => {
 			</div>
 		</div>
 	)
+}
+
+CardReglage.propTypes = {
+	min: PropTypes.number.isRequired,
+	max: PropTypes.number.isRequired,
+	step: PropTypes.number.isRequired,
+	titre: PropTypes.string.isRequired,
+	valeur: PropTypes.string.isRequired,
+	onChangeValeur: PropTypes.func.isRequired
 }
 
 export default CardReglage

@@ -1,5 +1,6 @@
 import React from 'react'
 import Gauge from 'react-svg-gauge'
+import PropTypes from 'prop-types'
 
 const CardMesure = props => {
 	const { label, max, value, color } = props
@@ -12,7 +13,7 @@ const CardMesure = props => {
 						max={max}
 						value={value}
 						width={350}
-						//height={500}
+						height={350}
 						label={label}
 						color={color}
 					/>
@@ -20,6 +21,13 @@ const CardMesure = props => {
 			</div>
 		</div>
 	)
+}
+
+CardMesure.propTypes = {
+	label: PropTypes.string.isRequired,
+	max: PropTypes.number.isRequired,
+	value: PropTypes.string.isRequired,
+	color: PropTypes.string.isRequired
 }
 
 export default CardMesure

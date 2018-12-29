@@ -13,7 +13,7 @@ class Reglages extends React.Component {
 	//
 	onChangeModule = e => {
 		const module = e.target.value
-		//console.log('module', module)
+
 		this.setState(
 			{
 				module: module
@@ -25,7 +25,7 @@ class Reglages extends React.Component {
 	}
 	onChangeTension = e => {
 		const u1 = e.target.value
-		//console.log('tension', u1)
+
 		this.setState(
 			{
 				u1eff: u1
@@ -37,7 +37,7 @@ class Reglages extends React.Component {
 	}
 	onChangePhase = e => {
 		const phase = e.target.value
-		//console.log('phase', phase)
+
 		this.setState(
 			{
 				phase: phase
@@ -71,7 +71,7 @@ class Reglages extends React.Component {
 							onChangeValeur={this.onChangeModule}
 							min={20}
 							max={500}
-							step={5}
+							step={2}
 							titre={'Module de la charge'}
 						/>
 					</div>
