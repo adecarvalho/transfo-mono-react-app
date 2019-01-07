@@ -33,7 +33,7 @@ class Mesures extends React.Component {
 							maxValue={300}
 							majorTicks={['0', '50', '100', '150', '200', '250', '300']}
 							minorTicks={10}
-							highlights={[{ from: 0, to: 300, color: 'rgba(200,200,200,.3)' }]}
+							highlights={[{ from: 0, to: 300, color: 'rgba(96,164,153,.5)' }]}
 						/>
 					</div>
 
@@ -47,7 +47,7 @@ class Mesures extends React.Component {
 							minValue={0}
 							maxValue={10}
 							majorTicks={['0', '2', '4', '6', '8', '10']}
-							highlights={[{ from: 0, to: 10, color: 'rgba(200,200,200,.3)' }]}
+							highlights={[{ from: 0, to: 10, color: 'rgba(96,164,153,.5)' }]}
 						/>
 					</div>
 
@@ -61,7 +61,7 @@ class Mesures extends React.Component {
 							minValue={0}
 							maxValue={10}
 							majorTicks={['0', '2', '4', '6', '8', '10']}
-							highlights={[{ from: 0, to: 10, color: 'rgba(200,200,200,.3)' }]}
+							highlights={[{ from: 0, to: 10, color: 'rgba(96,164,153,.5)' }]}
 						/>
 					</div>
 
@@ -87,9 +87,7 @@ class Mesures extends React.Component {
 								'1800',
 								'2000'
 							]}
-							highlights={[
-								{ from: 0, to: 2000, color: 'rgba(200,200,200,.3)' }
-							]}
+							highlights={[{ from: 0, to: 2000, color: 'rgba(96,164,153,.5)' }]}
 						/>
 					</div>
 
@@ -115,9 +113,7 @@ class Mesures extends React.Component {
 								'1800',
 								'2000'
 							]}
-							highlights={[
-								{ from: 0, to: 2000, color: 'rgba(200,200,200,.3)' }
-							]}
+							highlights={[{ from: 0, to: 2000, color: 'rgba(96,164,153,.5)' }]}
 						/>
 					</div>
 
@@ -131,7 +127,7 @@ class Mesures extends React.Component {
 							minValue={0}
 							maxValue={100}
 							majorTicks={['0', '20', '40', '60', '80', '100']}
-							highlights={[{ from: 0, to: 100, color: 'rgba(200,200,200,.3)' }]}
+							highlights={[{ from: 0, to: 100, color: 'rgba(96,164,153,.5)' }]}
 						/>
 					</div>
 				</div>
